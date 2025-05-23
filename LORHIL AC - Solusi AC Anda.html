@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)file:///C:/Users/Hilman%20Alfiqri/Documents/web%20tokooo.html -->
+<html lang="id"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LORHIL AC - Solusi AC Anda</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+    * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f1f9ff;
+      color: #1a1a1a;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: linear-gradient(90deg, #0d6efd, #00c0ff);
+      color: white;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
+      font-weight: 600;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      margin: 0;
+      user-select: none;
+      cursor: default;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 2rem;
+    }
+    nav ul li {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    nav ul li:hover, nav ul li.active {
+      background: rgba(255 255 255 / 0.3);
+    }
+      /* Hamburger toggle button */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 28px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    /* Remove margin-left to align right */
+    z-index: 1100;
+  }
+  .nav-toggle:focus {
+    outline: none;
+  }
+  .nav-toggle span {
+    width: 28px;
+    height: 3.5px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+  }
+  /* Animate toggle to X when active */
+  .nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg);
+  }
+  .nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    nav ul {
+      flex-direction: column;
+      position: fixed;
+      top: 60px;
+      right: -100%;
+      width: 220px;
+      background: linear-gradient(90deg, #0d6efd, #00c0ff);
+      height: calc(100% - 60px);
+      padding-top: 1rem;
+      gap: 1.5rem;
+      transition: right 0.3s ease-in-out;
+      border-radius: 0 0 0 12px;
+      box-shadow: -2px 0 12px rgba(0,0,0,0.15);
+      z-index: 10000;
+    }
+    nav ul.show {
+      right: 0;
+    }
+    nav ul li {
+      font-size: 1.2rem;
+      padding: 0.75rem 1rem;
+    }
+    .nav-toggle {
+      display: flex;
+    }
+  }
+    main {
+  padding: 2rem;
+  min-height: calc(100vh - 70px);
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  position: relative;
+  }
+    /* WhatsApp Floating Icon */
+    #whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: #25d366;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(37,211,102,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      z-index: 1100;
+    }
+    #whatsapp-float:hover {
+      transform: scale(1.15);
+    }
+    #whatsapp-float svg {
+      fill: white;
+      width: 20px;
+      height: 20px;
+      display: block;
+    }
+    #whatsapp-float.hidden {
+      display: none;
+    }
+    main > section {
+      display: none;
+    }
+    main > section.active {
+      display: block;
+      animation: fadeIn 0.7s ease forwards;
+    }
+    /* Hero */
+    #beranda .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      background: #cde7ff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 8px 20px rgba(13,110,253,0.15);
+    }
+    #beranda .hero-image {
+    flex: 1 1 50px; /* Menyesuaikan ukuran flex */
+    max-width: 100%; /* Memastikan gambar tidak melampaui batas */
+    }
+    #beranda .hero-image img {
+    width: 100%; /* Gambar akan mengambil lebar penuh dari kontainer */
+    height: auto; /* Mempertahankan rasio aspek gambar */
+    border-radius: 12px; /* Menambahkan sudut melengkung */
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1); /* Menambahkan bayangan */
+    }
+    #beranda .hero-text {
+      flex: 1 1 350px;
+    }
+    #beranda .hero-text h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #0056b3;
+    }
+    #beranda .hero-text p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: #034083;
+    }
+    /* About Lorhil with photos on right */
+    #beranda .about-lorhil-wrapper {
+      width: 100%;
+      background: white;
+      padding: 2rem 0;
+      box-shadow: 0 6px 18px rgba(0, 86, 179, 0.15);
+      border-radius: 12px;
+      margin-top: 2rem;
+    }
+    #beranda .about-lorhil {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      color: #073763;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+    #beranda .about-lorhil-content {
+      width: 48%;
+      min-width: 280px;
+      text-align: left;
+    }
+    #beranda .photo-gallery {
+      width: 48%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      border-radius: 12px;
+      grid-auto-rows: 240px;
+    }
+    #beranda .photo-gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 86, 179, 0.15);
+      display: block;
+    }
+    /* Testimonials */
+    #beranda .testimonials {
+      max-width: 850px;
+      margin: 2rem auto 0;
+      background: white;
+      border-radius: 12px;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 6px 18px rgba(0,86,179,0.15);
+      color: #073763;
+    }
+    #beranda .testimonials h3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: #004a99;
+    }
+    .testimonial-card {
+      background: #e9f4ff;
+      border-radius: 10px;
+      padding: 1.25rem 1.75rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 3px 8px rgba(0,109,255,0.15);
+      color: #02346e;
+      font-style: italic;
+      position: relative;
+    }
+    .testimonial-stars {
+      color: #fdcf00;
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+      user-select: none;
+    }
+    .testimonial-text {
+      font-size: 1rem;
+      margin: 0 0 0.7rem 0;
+    }
+    .testimonial-profile {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-style: normal;
+      color: #03254c;
+      margin-top: 8px;
+    }
+    .testimonial-profile img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.12);
+    }
+    .testimonial-name {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .testimonial-location {
+      font-size: 0.9rem;
+      color: #546a8a;
+    }
+    /* Contact Info */
+    #beranda .contact-info {
+      max-width: 850px;
+      margin: 2rem auto 0;
+      background: white;
+      border-radius: 12px;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 6px 18px rgba(0,86,179,0.15);
+      color: #073763;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    #beranda .contact-block {
+      flex: 1 1 250px;
+      min-width: 250px;
+    }
+    #beranda .contact-block h4 {
+      margin: 0 0 0.8rem;
+      color: #004a99;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+    #beranda .contact-block p,
+    #beranda .contact-block a {
+      margin: 0.2rem 0;
+      font-size: 1rem;
+      color: #03254c;
+      text-decoration: none;
+      display: inline-block;
+    }
+    #beranda .contact-block a:hover {
+      text-decoration: underline;
+    }
+    #beranda .social-icons {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 0.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    #beranda .social-icons a {
+      display: inline-flex;
+      width: 24px;
+      height: 24px;
+      color: #007bff;
+      transition: color 0.3s;
+      vertical-align: middle;
+    }
+    #beranda .social-icons a:hover {
+      color: #004a99;
+    }
+    #beranda .social-icons svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+      display: block;
+    }
+    /* Google Maps */
+    #beranda .map-container {
+      max-width: 850px;
+      margin: 1rem auto 0;
+      text-align: center;
+    }
+    #beranda .map-container a {
+      display: inline-block;
+      width: 100%;
+      max-width: 600px;
+      border: 2px solid #00c0ff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0,86,179,0.15);
+      cursor: pointer;
+      transition: box-shadow 0.3s;
+      text-decoration: none;
+    }
+    #beranda .map-container a:hover {
+      box-shadow: 0 10px 30px rgba(0,86,179,0.3);
+    }
+    #beranda .map-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+    }
+    /* Layanan */
+    #layanan {
+      margin-top: 2rem;
+      padding: 0 1rem;
+    }
+    #layanan.active {
+      display: block;
+      animation: slideIn 0.7s ease forwards;
+    }
+    #layanan h2 {
+      text-align: center;
+      color: #004a99;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+    #layanan .services-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.8rem;
+    }
+    .service-card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,192,255,0.2);
+      width: 280px;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      cursor: default;
+      transition: transform 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(0,192,255,0.35);
+    }
+    .service-icon {
+      font-size: 3.5rem;
+      color: #007bff;
+      margin-bottom: 1rem;
+    }
+    .service-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      color: #004a99;
+    }
+    .service-desc {
+      font-size: 1rem;
+      color: #2f2f2f;
+      line-height: 1.4;
+    }
+    /* Produk */
+    #produk {
+      margin-top: 2rem;
+      padding: 0 1rem;
+    }
+    #produk.active {
+      display: block;
+      animation: fadeIn 0.7s ease forwards;
+    }
+    .produk-section {
+      margin-bottom: 2.5rem;
+    }
+    .produk-section h3 {
+      color: #007bff;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #00c0ff;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+    .produk-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      justify-content: center;
+    }
+    .produk-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 18px rgba(0,192,255,0.2);
+      width: 220px;
+      padding: 1rem;
+      transition: transform 0.3s;
+    }
+    .produk-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0,192,255,0.3);
+    }
+    .produk-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: contain;
+      border-radius: 10px;
+      margin-bottom: 0.75rem;
+      background: #e6f0ff;
+      padding: 0.5rem;
+    }
+    .produk-name {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+      color: #004a99;
+    }
+    .produk-desc {
+      font-size: 0.9rem;
+      color: #555;
+    }
+    /* Pemesanan */
+    #pemesanan {
+      margin-top: 1rem;
+      padding: 0 1rem;
+    }
+    #pemesanan.active {
+      display: block;
+      animation: slideIn 0.7s ease forwards;
+    }
+    form {
+      max-width: 480px;
+      margin: auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 7px 25px rgba(0,192,255,0.25);
+    }
+    form h3 {
+      color: #007bff;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+      color: #004080;
+    }
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.6rem 0.75rem;
+      margin-bottom: 1.2rem;
+      border-radius: 6px;
+      border: 1.8px solid #a6d0ff;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      color: #1a1a1a;
+      transition: border-color 0.3s;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    button {
+      background: #0d6efd;
+      color: white;
+      font-weight: 600;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #0046d5;
+    }
+    /* Footer */
+    footer {
+      margin-top: 3rem;
+      padding: 1rem 2rem;
+      background: #0084b8;
+      color: #ffffff;
+      text-align: center;
+      font-size: 0.9rem;
+      user-select: none;
+    }
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes slideIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    /* Responsive */
+    @media (max-width: 992px) {
+      #beranda .about-lorhil {
+        flex-direction: column;
+        padding: 0 1rem;
+      }
+      #beranda .about-lorhil-content,
+      #beranda .photo-gallery {
+        width: 100% !important;
+        flex: none !important;
+      }
+      #beranda .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-top: 1rem;
+      }
+      .service-card, .produk-card {
+        margin: 1rem auto;
+      }
+    }
+    @media (max-width: 480px) {
+      #beranda .photo-gallery {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+    }
+  </style>
+</head><body>
+  <header>
+    <h1>LORHIL AC</h1>
+    <nav>
+      <ul class="">
+        <li class="active" data-section="beranda">Beranda</li>
+        <li data-section="layanan" class="">Layanan</li>
+        <li data-section="produk" class="">Produk</li>
+        <li data-section="pemesanan" class="">Pemesanan</li>
+      </ul>
+    </nav>
+     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+  <main>
+    <section id="beranda" class="active" aria-label="Halaman Beranda">
+      <div class="hero">
+        <div class="hero-text">
+          <h2>Selamat Datang di LORHIL AC</h2>
+          <p>Solusi terbaik untuk kebutuhan Air Conditioner Anda. Kami menyediakan AC baru dan bekas berkualitas, layanan cuci AC, perbaikan, serta instalasi profesional.</p>
+          <p>Rasakan udara sejuk dan nyaman di rumah atau kantor Anda dengan layanan terpercaya dari LORHIL AC.</p>
+        </div>
+        <div class="hero-image">
+          <img src="./LORHIL AC - Solusi AC Anda_files/logolorhil.png" alt="Air conditioner unit in modern home">
+        </div>
+      </div>
+      <div class="about-lorhil-wrapper">
+        <article class="about-lorhil">
+          <div class="about-lorhil-wrapper">
+        <article class="about-lorhil">
+          <div class="about-lorhil-content">
+            <h3>Tentang LORHIL AC</h3>
+            <p>LORHIL AC telah berdiri sejak 2006 dan selama lebih dari 18 tahun telah menjadi salah satu penyedia layanan terbaik di bidang Air Conditioner. Dengan pengalaman dan profesionalisme yang kami miliki, kami berkomitmen memberikan solusi lengkap untuk kebutuhan pendinginan Anda.</p>
+            <p>Kami melayani penjualan AC baru dengan berbagai merk terkemuka dan teknologi terbaru, serta menyediakan AC bekas berkualitas dengan harga kompetitif. Selain itu, layanan cuci AC kami memberikan pembersihan menyeluruh sehingga AC Anda selalu dalam kondisi prima dan sehat digunakan. Jika Anda mengalami kerusakan pada AC, teknisi ahli kami siap menawarkan perbaikan cepat dan tepat agar AC Anda kembali beroperasi optimal.</p>
+            <p>Tidak hanya itu, LORHIL AC juga menyediakan jasa pemasangan unit AC dengan standar instalasi profesional yang menjamin keamanan dan estetika pemasangan sesuai keinginan Anda. Kepuasan pelanggan merupakan prioritas utama kami dan kami selalu berusaha memberikan layanan terbaik dengan harga yang bersaing dan transparan.</p>
+            <p><b>Bergabunglah dengan ribuan pelanggan yang telah mempercayakan kebutuhan AC mereka kepada LORHIL AC, dan rasakan kenyamanan udara sejuk yang sesungguhnya di rumah atau tempat kerja Anda!</b></p>
+          </div>
+          <div class="photo-gallery" style="grid-template-columns: 1fr; height: auto;">
+            <img src="./LORHIL AC - Solusi AC Anda_files/lorhil1.jpg" alt="Foto 1 LORHIL AC" style="height: 300;">
+            <img src="./LORHIL AC - Solusi AC Anda_files/lorhil2.jpg" alt="Foto 2 LORHIL AC" style="height: 300;">
+            <img src="./LORHIL AC - Solusi AC Anda_files/lorhil3.jpg" alt="Foto 3 LORHIL AC" style="height: 300;">
+            <img src="./LORHIL AC - Solusi AC Anda_files/lorhil4.jpg" alt="Foto 3 LORHIL AC" style="height: 300;">
+          </div>
+        </article>
+      </div>
+        </article>
+      </div>
+      <section class="testimonials" aria-label="Testimoni Pelanggan">
+        <h3>Ulasan Pelanggan</h3>
+        <div class="testimonial-card">
+          <div class="testimonial-stars" aria-label="bintang lima">★★★★★</div>
+          <p class="testimonial-text">Layanan LORHIL AC sangat profesional dan cepat! AC saya kembali dingin seperti baru. Sangat direkomendasikan!</p>
+          <div class="testimonial-profile">
+            <img src="./LORHIL AC - Solusi AC Anda_files/user.png" alt="Foto profil Budi Santoso">
+            <div>
+              <div class="testimonial-name">Budi Santoso</div>
+              <div class="testimonial-location">Bangko</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars" aria-label="bintang lima">★★★★★</div>
+          <p class="testimonial-text">AC bekas yang saya beli kualitasnya bagus dan harga sangat bersahabat. Terima kasih LORHIL AC!</p>
+          <div class="testimonial-profile">
+            <img src="./LORHIL AC - Solusi AC Anda_files/user.png" alt="Foto profil Sari Dewi">
+            <div>
+              <div class="testimonial-name">Sari Dewi</div>
+              <div class="testimonial-location">Tran B1</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars" aria-label="bintang lima">★★★★★</div>
+          <p class="testimonial-text">Teknisi pemasangannya sangat teliti dan rapi. Pasang AC jadi mudah dan cepat.</p>
+          <div class="testimonial-profile">
+            <img src="./LORHIL AC - Solusi AC Anda_files/user.png" alt="Foto profil Andi Pratama">
+            <div>
+              <div class="testimonial-name">Andi Pratama</div>
+              <div class="testimonial-location">Sungai Manau</div>
+            </div>
+          </div>
+        </div>
+      </section>
+       <section class="contact-info" aria-label="Kontak dan Jam Operasional LORHIL AC">
+        <div class="contact-block">
+          <h4>Kontak</h4>
+          <p>Telepon Admin&nbsp;: <a href="https://wa.me/6285369494962">+62 85 3694 94962</a></p>
+          <p>Telepon 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <a href="https://wa.me/6281366752281">+62 81 3667 52281</a></p>
+          <p>Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <a href="mailto:lorhilac@gmail.com">lorhilac@gmail.com</a></p>
+          <p>Sungai Ulak, Kec. Nalo Tantan, Kabupaten Merangin, Jambi 37313</p>
+        </div>
+        <div class="contact-block">
+          <h4>Jam Operasional</h4>
+          <div><p>Senin - Sabtu: 08.00 - 17.00 WIB</p></div>
+          <p>Minggu: Libur</p>
+        </div>
+        <div class="contact-block">
+          <h4>Sosial Media</h4>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/lorhilac.bangkojambi/" target="_blank" aria-label="Facebook LORHIL AC" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.13 8.44 9.88v-6.99h-2.54V12h2.54v-2.2c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99C18.34 21.13 22 16.99 22 12z"></path></svg>
+            </a>
+            <a href="https://www.instagram.com/lorhillac/?hl=id" target="_blank" aria-label="Instagram LORHIL AC" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2a3.75 3.75 0 00-3.75 3.75v8.5a3.75 3.75 0 003.75 3.75h8.5a3.75 3.75 0 003.75-3.75v-8.5a3.75 3.75 0 00-3.75-3.75h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm4.75-3.13a1.13 1.13 0 110 2.25 1.13 1.13 0 010-2.25z"></path></svg>
+            </a>
+            <a href="https://wa.me/6285369494962" target="_blank" aria-label="WhatsApp LORHIL AC" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"></path>
+              </svg>
+            </a>
+          </div>
+          <h1></h1>
+          <div class="contact-block">
+          <h4>Google Maps</h4>
+          <div class="Maps">
+          <div class="map-container" style="margin-top: 1rem;">
+            <a href="https://maps.app.goo.gl/UFvESVu3tDiJYe6W8" target="_blank" rel="noopener" aria-label="Lokasi LORHIL AC di Google Maps">
+              <img src="./LORHIL AC - Solusi AC Anda_files/mapslorhil.PNG" alt="Peta lokasi LORHIL AC" style="width:100%;max-width:600px;border-radius:12px;box-shadow:0 6px 18px rgba(0,86,179,0.15);">
+            </a>
+          </div>
+        </div>
+      </div></div></section>
+    </section>
+    <section id="layanan" aria-label="Halaman Layanan" class="">
+      <h2>Layanan Kami</h2>
+      <div class="services-container">
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">❄️</div>
+          <h3 class="service-title">Penjualan AC Baru</h3>
+          <p class="service-desc">Kami menyediakan berbagai merk AC terbaru dengan teknologi terkini untuk kenyamanan maksimal di rumah atau kantor Anda.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">🔄</div>
+          <h3 class="service-title">Penjualan AC Bekas</h3>
+          <p class="service-desc">AC bekas berkualitas dengan harga terjangkau, telah kami cek performanya agar tetap optimal untuk Anda.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">🧼</div>
+          <h3 class="service-title">Cuci AC</h3>
+          <p class="service-desc">Layanan cuci AC menyeluruh untuk menjaga kebersihan dan performa AC agar tetap dingin dan hemat energi.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">🔧</div>
+          <h3 class="service-title">Perbaikan Kerusakan</h3>
+          <p class="service-desc">Teknisi kami siap memperbaiki berbagai kerusakan AC dengan cepat, tepat, dan menggunakan suku cadang asli.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">👨🏻‍🔧</div>
+          <h3 class="service-title">Jasa Pemasangan Unit</h3>
+          <p class="service-desc">Instalasi AC profesional dengan pemasangan aman dan rapi sesuai standar teknik terbaik.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">📢</div>
+          <h3 class="service-title">Jasa Sewa AC Standing</h3>
+          <p class="service-desc">Kami menyediakan jasa sewa AC Standing untuk Acara Pertemuan, Aula, dll.</p>
+        </article>
+      </div>
+    </section>
+    <section id="produk" aria-label="Halaman Produk" class="">
+      <div class="produk-section">
+        <h3>AC Baru</h3>
+        <div class="produk-list">
+          <div class="produk-card">
+            <img src="./LORHIL AC - Solusi AC Anda_files/DAIKIN1PK-removebg-preview.png" alt="AC Baru Model 1">
+            <div class="produk-name">AC Baru DAIKIN</div>
+            <div class="produk-desc">AC split 1 PK, hemat energi, garansi 2 tahun.</div>
+          </div>
+          <div class="produk-card">
+            <img src="./LORHIL AC - Solusi AC Anda_files/Standing2pk.png" alt="AC Baru Model 2">
+            <div class="produk-name">AC Baru Standing PANASONIC</div>
+            <div class="produk-desc">AC standing, performa dingin maksimal.</div>
+          </div>
+          <div class="produk-card">
+            <img src="./LORHIL AC - Solusi AC Anda_files/AQUA1PK-removebg-preview.png" alt="AC Baru Model 3">
+            <div class="produk-name">AC Baru AQUA</div>
+            <div class="produk-desc">AC Split, Dingin maksimal , cocok untuk Kamar tidur, ruang tamu.</div>
+          </div>
+          <div class="produk-card">
+            <img src="./LORHIL AC - Solusi AC Anda_files/Standing1PK.png" alt="AC Baru Model 1">
+            <div class="produk-name">AC Baru Standing SHARP</div>
+            <div class="produk-desc">AC split 1 PK, hemat energi, garansi 2 tahun.</div>
+          </div>
+          <div class="produk-card">
+            <img src="./LORHIL AC - Solusi AC Anda_files/Panasonic1pk.png" alt="AC Baru Model 2">
+            <div class="produk-name">AC Baru PANASONIC</div>
+            <div class="produk-desc">AC Split 2 PK, performa dingin maksimal, cocok untuk Kamar tidur, ruang tamu, kantor.</div>
+          </div>
+          <div class="produk-card">
+            <img src="./LORHIL AC - Solusi AC Anda_files/Standingsetengahpk.png" alt="AC Baru Model 3">
+            <div class="produk-name">AC Standing LG</div>
+            <div class="produk-desc">AC Standing, cocok untuk Aula, pertemuan, restoran.</div>
+          </div>
+          <div class="produk-card">
+            <img src="./LORHIL AC - Solusi AC Anda_files/GREE1PK-removebg-preview.png" alt="AC Baru Model 2">
+            <div class="produk-name">AC Baru GREE</div>
+            <div class="produk-desc">AC Split 1 PK, performa dingin maksimal cocok untuk Kamar tidur, ruang tamu, kantor.</div>
+          </div>
+          <div class="produk-card">
+            <img src="./LORHIL AC - Solusi AC Anda_files/standingsamsung.png" alt="AC Baru Model 3">
+            <div class="produk-name">AC Baru Standing SAMSUNG</div>
+            <div class="produk-desc">AC Standing, cocok untuk Aula, pertemuan, restoran.</div>
+          </div>
+        </div>
+      </div>
+      <div class="produk-section">
+        <h3>AC Bekas</h3>
+        <div class="produk-list">
+          <div class="produk-card">
+            <img src="./LORHIL AC - Solusi AC Anda_files/DAIKIN1PK-removebg-preview.png" alt="AC Baru Model 1">
+            <div class="produk-name">AC Second DAIKIN</div>
+            <div class="produk-desc">AC split 1 PK, hemat energi, garansi 2 tahun.</div>
+          </div>
+          <div class="produk-card">
+            <img src="./LORHIL AC - Solusi AC Anda_files/AQUA1PK-removebg-preview.png" alt="AC Baru Model 3">
+            <div class="produk-name">AC Second AQUA</div>
+            <div class="produk-desc">AC Split, Dingin maksimal , cocok untuk Kamar tidur, ruang tamu.</div>
+          </div>
+          <div class="produk-card">
+            <img src="./LORHIL AC - Solusi AC Anda_files/Panasonic1pk.png" alt="AC Baru Model 2">
+            <div class="produk-name">AC Second PANASONIC</div>
+            <div class="produk-desc">AC Split 2 PK, performa dingin maksimal, cocok untuk Kamar tidur, ruang tamu, kantor.</div>
+          </div>
+         <div class="produk-card">
+            <img src="./LORHIL AC - Solusi AC Anda_files/GREE1PK-removebg-preview.png" alt="AC Baru Model 2">
+            <div class="produk-name">AC Second GREE</div>
+            <div class="produk-desc">AC Split 1 PK, performa dingin maksimal cocok untuk Kamar tidur, ruang tamu, kantor.</div>
+          </div>
+      </div>
+      <a href="https://wa.me/6285369494962" id="whatsapp-float" target="_blank" aria-label="Chat WhatsApp LORHIL AC" rel="noopener" title="Chat via WhatsApp" class="">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"></path>
+              </svg>
+      <path d="M20.52 3.48a12.21 12.21 0 00-17.22 0 12.1 12.1 0 00-3.59 9.1 12.25 12.25 0 007.14 10.4l.01-.01A12.14 12.14 0 0012 23a12.11 12.11 0 008.53-3.54 12.18 12.18 0 003-8.01zm-7.32 16.9a9.37 9.37 0 01-5.42-1.55l-3.16.85.86-3.11a9.6 9.6 0 01-1.51-5.67 9.52 9.52 0 0116.55-6.52 9.48 9.48 0 012.34 6.52 9.43 9.43 0 01-7.64 9.48zm4.52-6.03c-.17-.07-1-.47-1.16-.52s-.48-.07-.68.12-.8.54-.95.62-.42.06-.62-.03a4.34 4.34 0 01-1.67-1.15 5.29 5.29 0 01-1.17-1.35c-.14-.19 0-.29.07-.38s.16-.19.23-.28a.43.43 0 00.06-.42c-.05-.14-.61-1.45-.83-2a3.94 3.94 0 00-.86-1 2.3 2.3 0 00-.48-.42c-.16-.12-.38-.11-.57-.09a.93.93 0 00-.66.36 3.91 3.91 0 00-1.23 4.12 5.6 5.6 0 004.58 3.5 6.64 6.64 0 003.14 0 3.94 3.94 0 002.89-2.34 4.55 4.55 0 00-.31-3.01 3.4 3.4 0 00-.82-1.19z">
+    
+  </path></a>
+    </div></section>
+    <section id="pemesanan" aria-label="Halaman Pemesanan" class="">
+      <form id="orderForm" aria-label="Formulir Pemesanan AC dan Layanan">
+        <h3>Form Pemesanan</h3>
+        <label for="name">Nama Lengkap</label>
+        <input type="text" id="name" name="name" required="" placeholder="Masukkan nama lengkap Anda">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required="" placeholder="Masukkan email Anda">
+        <label for="phone">No. Telepon</label>
+        <input type="text" id="phone" name="phone" required="" placeholder="Masukkan nomor telepon" pattern="[0-9+()\-\\s]+" title="Hanya angka dan simbol yang diperbolehkan">
+        <label for="orderType">Pilih Produk / Layanan</label>
+        <select id="orderType" name="orderType" required="">
+          <option value="" disabled="" selected="">-- Pilih salah satu --</option>
+          <optgroup label="Produk Baru">
+            <option value="AC Baru Model 1">AC Baru DAIKIN</option>
+            <option value="AC Baru Model 2">AC Baru AQUA</option>
+            <option value="AC Baru Model 3">AC Baru PANASONIC</option>
+            <option value="AC Baru Model 1">AC Baru GREE</option>
+            <option value="AC Baru Model 2">AC Baru Standing PANASONIC</option>
+            <option value="AC Baru Model 3">AC Baru Standing SHARP</option>
+            <option value="AC Baru Model 2">AC Baru Standing LG</option>
+            <option value="AC Baru Model 3">AC Baru Standing SAMSUNG</option>
+          </optgroup>
+          <optgroup label="Produk Bekas">
+            <option value="AC Bekas Model A">AC Second DAIKIN</option>
+            <option value="AC Bekas Model B">AC Second AQUA</option>
+            <option value="AC Bekas Model C">AC Second PANASONIC</option>
+            <option value="AC Bekas Model D">AC Second GREE</option>
+          </optgroup>
+          <optgroup label="Layanan">
+            <option value="Cuci AC">Cuci AC</option>
+            <option value="Perbaikan Kerusakan">Perbaikan Kerusakan</option>
+            <option value="Jasa Pemasangan Unit">Jasa Pemasangan Unit</option>
+          </optgroup>
+          <optgroup label="Menyewa">
+            <option value="Sewa AC Standing">Sewa Ac Standing</option>
+          </optgroup>
+        </select>
+        <label for="notes">Catatan (opsional)</label>
+        <textarea id="notes" name="notes" placeholder="Berikan keterangan tambahan jika perlu"></textarea>
+        <button type="submit">Kirim Pesanan</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    © 2025 LORHIL AC. Semua hak dilindungi.
+  </footer>
+  <a href="https://wa.me/6285369494962" id="whatsapp-float" target="_blank" aria-label="Chat WhatsApp LORHIL AC" rel="noopener" title="Chat via WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"></path>
+              </svg>
+      <path d="M20.52 3.48a12.21 12.21 0 00-17.22 0 12.1 12.1 0 00-3.59 9.1 12.25 12.25 0 007.14 10.4l.01-.01A12.14 12.14 0 0012 23a12.11 12.11 0 008.53-3.54 12.18 12.18 0 003-8.01zm-7.32 16.9a9.37 9.37 0 01-5.42-1.55l-3.16.85.86-3.11a9.6 9.6 0 01-1.51-5.67 9.52 9.52 0 0116.55-6.52 9.48 9.48 0 012.34 6.52 9.43 9.43 0 01-7.64 9.48zm4.52-6.03c-.17-.07-1-.47-1.16-.52s-.48-.07-.68.12-.8.54-.95.62-.42.06-.62-.03a4.34 4.34 0 01-1.67-1.15 5.29 5.29 0 01-1.17-1.35c-.14-.19 0-.29.07-.38s.16-.19.23-.28a.43.43 0 00.06-.42c-.05-.14-.61-1.45-.83-2a3.94 3.94 0 00-.86-1 2.3 2.3 0 00-.48-.42c-.16-.12-.38-.11-.57-.09a.93.93 0 00-.66.36 3.91 3.91 0 00-1.23 4.12 5.6 5.6 0 004.58 3.5 6.64 6.64 0 003.14 0 3.94 3.94 0 002.89-2.34 4.55 4.55 0 00-.31-3.01 3.4 3.4 0 00-.82-1.19z">
+    
+  </path></a>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuItems = document.querySelectorAll('nav ul li');
+      const sections = document.querySelectorAll('main > section');
+      const whatsappFloat = document.getElementById('whatsapp-float');
+      function updateWhatsAppVisibility() {
+        const activeSection = document.querySelector('main > section.active');
+        whatsappFloat.classList.toggle('hidden', !(activeSection && activeSection.id === 'beranda'));
+      }
+      menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+          menuItems.forEach(i => i.classList.remove('active'));
+          sections.forEach(sec => sec.classList.remove('active'));
+          item.classList.add('active');
+          const sectionId = item.getAttribute('data-section');
+          const sectionToShow = document.getElementById(sectionId);
+          if(sectionToShow) sectionToShow.classList.add('active');
+          updateWhatsAppVisibility();
+        });
+      });
+      updateWhatsAppVisibility();
+      const form = document.getElementById('orderForm');
+      if(form){
+        form.addEventListener('submit', e => {
+          e.preventDefault();
+          const name = form.name.value.trim();
+          const email = form.email.value.trim();
+          const phone = form.phone.value.trim();
+          const orderType = form.orderType.value;
+          const notes = form.notes.value.trim();
+          if(!name || !email || !phone || !orderType){
+            alert('Harap lengkapi semua bidang yang wajib diisi.');
+            return;
+          }
+          let message = 'Pesanan dari LORHIL AC:%0A';
+          message += `Nama: ${encodeURIComponent(name)}%0A`;
+          message += `Email: ${encodeURIComponent(email)}%0A`;
+          message += `Telepon: ${encodeURIComponent(phone)}%0A`;
+          message += `Produk/Layanan: ${encodeURIComponent(orderType)}%0A`;
+          if(notes) message += `Catatan: ${encodeURIComponent(notes)}%0A`;
+          message += '%0ATerima kasih!';
+          const whatsappURL = `https://wa.me/6285369494962?text=${message}`;
+          window.open(whatsappURL, '_blank');
+          form.reset();
+        });
+      }
+    });
+  </script>
+   <script>
+    // Navigation toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navUl = document.querySelector('nav ul');
+
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !expanded);
+      navToggle.classList.toggle('active');
+      navUl.classList.toggle('show');
+    });
+
+    // Section switching for nav links
+    const navLinks = document.querySelectorAll('nav ul li');
+    const sections = document.querySelectorAll('main > section');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        // Remove active from all links and sections
+        navLinks.forEach(l => l.classList.remove('active'));
+        sections.forEach(s => s.classList.remove('active'));
+
+        // Add active on clicked link and corresponding section
+        link.classList.add('active');
+        const sectionId = link.getAttribute('data-section');
+        const activeSection = document.getElementById(sectionId);
+        if (activeSection) activeSection.classList.add('active');
+
+        // Close nav menu on small screens after click
+        if (navToggle.classList.contains('active')) {
+          navToggle.classList.remove('active');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navUl.classList.remove('show');
+        }
+      });
+    });
+  </script>
+
+
+</body></html>
